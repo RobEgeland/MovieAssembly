@@ -7,6 +7,8 @@ const director = document.createElement('h3')
 const genre = document.createElement('h4')
 const plot = document.createElement('p')
 const addMovie = document.createElement('button')
+addMovie.setAttribute('style', 'height: 40px; width: 100px; background-color: #a8d5baff')
+addMovie.innerText = 'Add Movie'
 
 const search = document.querySelector('form')
 const movieDetails = document.querySelector('div#movieDetails')
@@ -32,6 +34,7 @@ function attachMovieInfo(data) {
     movieDetails.appendChild(director)
     movieDetails.appendChild(genre)
     movieDetails.appendChild(plot)
+    movieDetails.appendChild(addMovie)
 
 }
 
