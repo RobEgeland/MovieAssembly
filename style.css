@@ -1,26 +1,28 @@
 #watchedList {
     padding: 50px;
-    border-style: solid;
-    width: 200px;
+    border: 10px #f8d41f solid;
+    box-shadow: 1px 2px 4px black;
+    width: 300px;
     float: right;
     text-align: center;
     margin-right: 100px;
 }
 
 #watchList {
-    border-style: solid;
+    border: 10px #f8d41f solid;
+    box-shadow: 1px 2px 4px black;
     padding: 50px;
-    width: 200px;
+    width: 300px;
     float: left;
     text-align: center;
     margin-left: 100px;
 }
 
 #movieDetails {
-    border-style: solid;
-    height: 100px;
+    height: 150px;
     border: 50px;
     text-align: center;
+    margin: 50px;
 }
 
 form {
@@ -36,11 +38,14 @@ header {
 }
 
 input[type=text] {
+    box-shadow: 1px 2px 4px black;
+    border: 2px;
     width: 25%;
     padding: 8px;
 }
 
 input[type=submit] {
+    box-shadow: 1px 2px 4px black;
     padding: 8px;
 }
 
@@ -49,8 +54,8 @@ label {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-html {
-    background-color: rgb(64, 190, 148);
+body {
+    background-color: #cfdef3;
 }
 
 h1 {
@@ -68,4 +73,9 @@ h2.list {
 
 li {
     font-size: 25px;
+}
+
+h2#details {
+    text-align: center;
+  
 }
