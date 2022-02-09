@@ -4,18 +4,22 @@
     width: 200px;
     float: right;
     text-align: center;
+    margin-right: 100px;
 }
 
 #watchList {
     border-style: solid;
+    padding: 50px;
     width: 200px;
     float: left;
     text-align: center;
+    margin-left: 100px;
 }
 
 #movieDetails {
+    border-style: solid;
     height: 100px;
-    border-bottom: 50px;
+    border: 50px;
     text-align: center;
 }
 
@@ -28,15 +32,40 @@ form {
 header {
     height: 300x;
     text-align: center;
+    margin-top: 50px;
 }
 
 input[type=text] {
     width: 25%;
-    padding: 10px;
+    padding: 8px;
+}
+
+input[type=submit] {
+    padding: 8px;
 }
 
 label {
-    font-size: 25px;
+    font-size: 20px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+html {
+    background-color: rgb(64, 190, 148);
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h2#header {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h2.list {
+    font-size: 30x;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+li {
+    font-size: 25px;
+}
