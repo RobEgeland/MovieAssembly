@@ -10,3 +10,11 @@ Movie Assembly is an app that allows you to search from a wide range of movies a
 
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/88636858/153515819-b670d8f9-69dc-47b7-8ec5-00683e6e7dea.gif)
 
+
+## Contributing
+
+Pull request are welcome.
+
+```bash
+git clone git@github.com:RobEgeland/MovieAssembly.git
+```
