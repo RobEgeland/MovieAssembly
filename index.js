@@ -18,8 +18,6 @@ const watchedList = document.querySelector('div#watchedList')
 const emptyHeart = String.fromCodePoint(0x1F90D)
 const fullHeart = String.fromCodePoint(0x2764)
 let noRating = `<div>${emptyHeart} ${emptyHeart} ${emptyHeart} ${emptyHeart} ${emptyHeart}</div>`
-//[emptyHeart, emptyHeart, emptyHeart, emptyHeart, emptyHeart]
-console.log(fullHeart)
 
 search.addEventListener('submit', getMovieInfo)
 
@@ -28,6 +26,7 @@ function getMovieInfo(e) {
     fetch(`http://www.omdbapi.com/?apikey=4f4fe272&r=json&t=${e.path[0][0].value}`)
     .then(res => res.json())
     .then(data => attachMovieInfo(data))
+    .catch(err => {alert('movie not found')})
 }
 
 function attachMovieInfo(data) {
@@ -43,7 +42,7 @@ function attachMovieInfo(data) {
     movieDetails.appendChild(addMovie)
 }
 
-movieDetails.addEventListener('click', addToWatch)
+addMovie.addEventListener('click', addToWatch)
 
 function addToWatch(e) {
     let watchItem = document.createElement('h2')
@@ -78,7 +77,6 @@ function moveToWatched(e) {
 }
 
 function changeRating(e) {
-    console.log(e.target.id)
     heartArray = Array.from(e.path[1].children)
     heartArray.forEach(span => {
         if(span.id <= e.target.id) {
