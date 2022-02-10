@@ -16,8 +16,10 @@ const watchList = document.querySelector('div#watchList')
 const watchedList = document.querySelector('div#watchedList')
 
 const emptyHeart = String.fromCodePoint(0x1F90D)
-const fullHeart = String.fromCodePoint(0xFE0F)
-let noRating = [emptyHeart, emptyHeart, emptyHeart, emptyHeart, emptyHeart]
+const fullHeart = String.fromCodePoint(0x2764)
+let noRating = `<div>${emptyHeart} ${emptyHeart} ${emptyHeart} ${emptyHeart} ${emptyHeart}</div>`
+//[emptyHeart, emptyHeart, emptyHeart, emptyHeart, emptyHeart]
+console.log(fullHeart)
 
 search.addEventListener('submit', getMovieInfo)
 
@@ -63,8 +65,8 @@ function addToWatch(e) {
 
 function moveToWatched(e) {
     const watchedItem = document.createElement('h2')
-    let rating = document.createElement('span')
-    rating.innerText = noRating
+    let rating = document.createElement('div')
+    rating.innerHTML = `<span id='1'>${emptyHeart}</span> <span id='2'>${emptyHeart}</span> <span id='3'>${emptyHeart}</span> <span id='4'>${emptyHeart}</span> <span id='5'>${emptyHeart}</span>`
 
     watchedItem.innerText = e.path[1].childNodes[0].innerText
     e.path[1].remove()
@@ -73,6 +75,17 @@ function moveToWatched(e) {
     watchedList.appendChild(rating)
 
     rating.addEventListener('click', changeRating)
+}
+
+function changeRating(e) {
+    console.log(e.target.id)
+    heartArray = Array.from(e.path[1].children)
+    heartArray.forEach(span => {
+        if(span.id <= e.target.id) {
+            span.innerText = fullHeart
+        }
+    })
+
 }
 
 
