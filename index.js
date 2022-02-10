@@ -15,9 +15,9 @@ const movieDetails = document.querySelector('div#movieDetails')
 const watchList = document.querySelector('div#watchList')
 const watchedList = document.querySelector('div#watchedList')
 
-const emptyStar = '✰'
-const fullStar = '⭐'
-
+const emptyHeart = String.fromCodePoint(0x1F90D)
+const fullHeart = String.fromCodePoint(0xFE0F)
+let noRating = [emptyHeart, emptyHeart, emptyHeart, emptyHeart, emptyHeart]
 
 search.addEventListener('submit', getMovieInfo)
 
@@ -63,10 +63,16 @@ function addToWatch(e) {
 
 function moveToWatched(e) {
     const watchedItem = document.createElement('h2')
-    console.log(e.path[1])
+    let rating = document.createElement('span')
+    rating.innerText = noRating
+
     watchedItem.innerText = e.path[1].childNodes[0].innerText
     e.path[1].remove()
+
     watchedList.appendChild(watchedItem)
+    watchedList.appendChild(rating)
+
+    rating.addEventListener('click', changeRating)
 }
 
 
