@@ -38,12 +38,12 @@ function attachMovieInfo(data) {
     director.innerText = data.Director
     genre.innerText = data.Genre
     plot.innerText = data.Plot
+    let info = [movieTitle, director, genre, plot, addMovie]
+    appendMovieDetails(info)
+}
 
-    movieDetails.appendChild(movieTitle)
-    movieDetails.appendChild(director)
-    movieDetails.appendChild(genre)
-    movieDetails.appendChild(plot)
-    movieDetails.appendChild(addMovie)
+function appendMovieDetails(arr) {
+    arr.forEach(info => movieDetails.appendChild(info))
 }
 
 addMovie.addEventListener('click', addToWatch)
