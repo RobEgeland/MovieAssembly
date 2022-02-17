@@ -1,7 +1,3 @@
-// fetch('http://www.omdbapi.com/?apikey=4f4fe272&r=json&t=Dune')
-// .then(res => res.json())
-// .then(res => console.log(res))
-
 const movieTitle = document.createElement('h2')
 const director = document.createElement('h3')
 const genre = document.createElement('h4')
@@ -25,8 +21,16 @@ function getMovieInfo(e) {
     e.preventDefault()
     fetch(`http://www.omdbapi.com/?apikey=4f4fe272&r=json&t=${e.path[0][0].value}`)
     .then(res => res.json())
-    .then(data => attachMovieInfo(data))
-    .catch(err => {alert('movie not found')})
+    .then(data => checkMovie(data))
+    .catch(err => {alert('movie not found', err)})
+}
+
+function checkMovie(data) {
+    if(data.Title === undefined) {
+        window.error('movie not found')
+    }else {
+        attachMovieInfo(data)
+    }
 }
 
 function attachMovieInfo(data) {
